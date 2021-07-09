@@ -28,6 +28,9 @@ namespace GraphApplication
                     graph.AddNode(vertices[sourceVertexIndex], new NodeWithCost<int>(vertices[destinationVertexIndex], cost));
                 }
 
+                var isCyclicGraph = graph.IsCyclic();
+                Console.WriteLine("Graph is cyclic:" + isCyclicGraph);
+                Console.WriteLine();
                 int source = vertices[0];
                 ITraverser<int, NodeWithCost<int>> traverser = new DijkstraTraverser<int, NodeWithCost<int>>();
                 var result = traverser.Traverse(graph, 0);
