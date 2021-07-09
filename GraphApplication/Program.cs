@@ -13,13 +13,13 @@ namespace GraphApplication
             {
                 IGraph<int, NodeWithCost<int>> graph = new WeightedGraph<int>();
                 IDataWithCostReader<int> dataReader = new IntegerWeightedGraphDataReader();
-                var vertices = dataReader.GetVertices("Vertices.txt");
+                var vertices = dataReader.GetVertices("../../../TextFiles/Vertices.txt");
                 for (int i = 0; i < vertices.Count; i++)
                 {
                     graph.AddVertex(vertices[i]);
                 }
 
-                var nodes = dataReader.GetNodes("Nodes.txt");
+                var nodes = dataReader.GetNodes("../../../TextFiles/Nodes.txt");
                 for (int i = 0; i < nodes.Count; i++)
                 {
                     int sourceVertexIndex = nodes[i].Item1;
